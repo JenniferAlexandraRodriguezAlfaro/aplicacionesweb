@@ -1,8 +1,8 @@
 <?php
-$nombre = "Rodiguez Alfaro Jennifer Alexandra";
+$nombre = "Rodriguez Alfaro Jennifer Alexandra";
 $matricula = "203241073";
-$fecha = date('Y') . "-" . date('m') . "-" . date('d');
-$hora = date('H') . ":" . date('i') . ":" . date('s');
+$fecha = date('Y') . "-" . date('m') ."-". date('d');
+$hora = date('H') . ":" . date('i') .":". date('s');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,12 +13,12 @@ $hora = date('H') . ":" . date('i') . ":" . date('s');
     <meta name="robots" content="none, noindex, nofollow">
     <meta name="description" content="<?php echo $matricula; ?>">
     <meta name="author" content="<?php echo $nombre; ?>">
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.0/dist/slate/bootstrap.min.css" rel="stylesheet" crossorigin="anomymous" />
-    <link href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" rel="stylesheet" crossorigin="anomymous" />
-    <link href="mapas.css" rel="stylesheet" />
-    <link href="https://www.utn.red/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.0/dist/slate/bootstrap.min.css">
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css">
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon"  href="https://www.utn.red/favicon.png">
+    <link rel="stylesheet" href="https://openlayers.org/en/v6.5.0/css/ol.css" type="text/css"> 
+    <link href="mapas.css" rel="stylesheet">
     <title><?php echo $nombre . ' ' . $matricula; ?></title>
 </head>
 <body>
@@ -31,7 +31,7 @@ $hora = date('H') . ":" . date('i') . ":" . date('s');
 </div>
 
 <div class="card-body">
-<?php echo $nombre; ?>
+<div id="divMapa"  class="mapas"></div>
 </div>
 
 <div class="card-footer">
@@ -46,7 +46,9 @@ $hora = date('H') . ":" . date('i') . ":" . date('s');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous" ></script>
 <script src="https://kit.fontawesome.com/c6c9331c4f.js" crossorigin="anonymous" ></script>
 <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js" crossorigin="anonymous" ></script>
-<script src="https://cdn.jsdelivr.net/gh/openLayers.github.io@master/en/v6.9.0/build/ol.js" crossorigin="anonymous" ></script>
+<script src="https://openlayers.org/en/v6.5.0/build/ol.js" type="text/javascript"></script>
+<script src="mapas.js"></script>
+
     
 </body>
 </html>
