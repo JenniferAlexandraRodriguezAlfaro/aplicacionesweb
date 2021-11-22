@@ -1,4 +1,4 @@
-const URL_APY_MARVEL ="https://gateway.marvel.com/433/v1/public/";
+const URL_API_MARVEL = "https://gateway.marvel.com:443/v1/public/";
 const KEY_PUBLICA ='298aee66b618cfcbd441b845e4585faa';
 const KEY_PRIVADA = '370db02a0499dfc9d6c5ea6f184e35e7797cbf18';
 let marcaTiempo = '';
@@ -8,7 +8,7 @@ let url = '';
 let respuesta = null;
 let datos = null;
 let jsonPersonajes = null;
-let objetoPersonajes = null;
+let objetoPersonaje = null;
 let offset = 0;
 
 $(document).ready( function()
@@ -37,7 +37,7 @@ function crearParametros()
     parametros += KEY_PUBLICA;
     parametros += '&hash=';
     parametros += crearHash();
-    url = URL_APY_MARVEL + parametros;
+    url = URL_API_MARVEL + parametros;
 }
 
 async function obtenerDatos()
@@ -69,26 +69,26 @@ function pintarDatos()
         html = '';
         //Si hay personajes:
         for(indice=0; indice<jsonPersonajes.length; indice++) {
-            objetoPersonajes = objetoPersonajes[indice];
+            objetoPersonaje = jsonPersonajes[indice];
             html += '<tr class="trDatos">';
                 html += '<td>';
                     html += '<div class="card mb-3">';
                     html += '<div class="row g-0">';
                     html += '<div class="col-md-4">';
-                        html += '<img src="' + (objetoPersonajes.thumbnail.path).replace("http", "https") + '.';
-                        html += objetoPersonajes.thumbnail.extension + '" class="img-fluid rounded-start" alt="';
-                        html += + objetoPersonajes.name + '">';
+                        html += '<img src="' + (objetoPersonaje.thumbnail.path).replace("http", "https") + '.';
+                        html += objetoPersonaje.thumbnail.extension + '" class="img-fluid rounded-start" alt="';
+                        html += + objetoPersonaje.name + '">';
                     html += '</div>';
                     html += '<div class="col-md-8">';
                     html += '<div class="card-body">';
-                    html += 'h5 id="h5_' + objetoPersonajes.id + '" class="card-title">' + objetoPersonajes.name + '</h5>';
-                    objetoPersonajes.description = (objetoPersonajes.description=="")? 'No hay descripción':objetoPersonajes.description;
-                    html += '<p class="card-text">' + objetoPersonajes.description + '</p>';
+                    html += '<h5 id="h5_' + objetoPersonaje.id + '" class="card-title">' + objetoPersonaje.name + '</h5>';
+                    objetoPersonaje.description = (objetoPersonaje.description=="")? 'No hay descripción':objetoPersonaje.description;
+                    html += '<p class="card-text">' + objetoPersonaje.description + '</p>';
                     html += '<p class="card-text"><small class="text-muted">';
-                    html += objetoPersonajes.comics.available + ' Comic(s) disponible(s).<br />';
-                    html += objetoPersonajes.series.available + ' Serie(s) disponibñe(s).<br  />';
-                    html += objetoPersonajes.stories.available + ' Historia(s) disponible(s).<br />';
-                    html += objetoPersonajes.events.available + ' Evento(s) disponible(s).';
+                    html += objetoPersonaje.comics.available + ' Comic(s) disponible(s).<br />';
+                    html += objetoPersonaje.series.available + ' Serie(s) disponibñe(s).<br  />';
+                    html += objetoPersonaje.stories.available + ' Historia(s) disponible(s).<br />';
+                    html += objetoPersonaje.events.available + ' Evento(s) disponible(s).';
                     html += '</small></p>';
                     html += '</div>';
                     html += '</div>';
